@@ -9,7 +9,8 @@ public class RotateByMouse : MonoBehaviour
     public float minPitch;
     public float maxPitch;
     private float pitch;
-
+    public bool hideCursor;
+#if UNITY_EDITOR || UNITY_STANDALONE
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -34,5 +35,6 @@ public class RotateByMouse : MonoBehaviour
         cameraHolder.localEulerAngles = new Vector3(pitch, 0, 0);
     }
 
-
+#endif
 }
+
